@@ -6,8 +6,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.installEventFilter(new IdleFilter());
     MainWindow w;
-    w.installEventFilter(new IdleFilter());
     w.show();
     return a.exec();
 }
