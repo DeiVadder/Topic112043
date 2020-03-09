@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,17 +17,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     idlefilter.cpp \
-    main.cpp \
-    mainwindow.cpp
+    main.cpp
+#    mainwindow.cpp
 
 HEADERS += \
-    idlefilter.h \
-    mainwindow.h
+    idlefilter.h
+#    mainwindow.h
 
-FORMS += \
-    mainwindow.ui
+#FORMS += \
+#    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    qmlqrc.qrc
